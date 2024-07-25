@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airline Reservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to Airline Reservation System</h1>
+    <form action="{{ url_for('check_passenger') }}" method="post">
+        <label for="dob">Date of Birth (YYYY-MM-DD):</label>
+        <input type="text" id="dob" name="dob">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+        <button type="submit">Check</button>
+    </form>
+</body>
+</html>

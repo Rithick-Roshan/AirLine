@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Flights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="video-container"> 
+    <video autoplay muted loop id="background-video">
+        <source src="{{ url_for('static', filename='flight-video.mp4') }}" type="video/mp4">
+    </video>
+    <div class="form-container">
+        <h2>Select a Flight</h2>
+        <div class="flights-container">
+            <form method="POST" action="{{ url_for('booking') }}">
+                <select name="airline_number" required>
+                    {% for flight in flights %}
+                    <option value="{{ flight.airline_number }}">{{ flight.name }} ({{ flight.from_city }} to {{ flight.to_city }})</option>
+                    {% endfor %}
+                </select>
+                <select name="trip_choice" required>
+                    <option value="single">Single</option>
+                    <option value="round">Round</option>
+                </select>
+                <select name="payment_method" required>
+                    <option value="cash">Cash</option>
+                    <option value="internet">Internet Banking</option>
+                </select>
+                <button type="submit">Book Flight</button>
+            </form>
+        </div>
+    </div>
+ </div>
+</body>
+</html>

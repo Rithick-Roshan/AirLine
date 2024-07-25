@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="{{ url_for('register_passenger_route') }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <label for="dob">Date of Birth (YYYY-MM-DD):</label>
+        <input type="text" id="dob" name="dob">
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
